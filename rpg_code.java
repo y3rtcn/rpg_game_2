@@ -55,9 +55,6 @@ public class Rpg_Game1 {
             checkLevelUp();
         }
     }
-
-
-
     void battle_field() {
         Scanner in = new Scanner(System.in);
         int wherego = 0;
@@ -65,7 +62,7 @@ public class Rpg_Game1 {
         System.out.println("2. 포션상점");
         System.out.print("입장할 장소를 선택하세요 : ");
         wherego = in.nextInt();
-        if (wherego == 1){
+        if(wherego == 1){
             System.out.println("사냥터에 입장하였습니다.");
             System.out.println("1. 노말 너구리");
             System.out.println("2. 물속성 물의 살쾡이");
@@ -99,11 +96,10 @@ public class Rpg_Game1 {
                 }
             }
         }
-        else if (wherego == 2) {
+        else if(wherego == 2) {
             PotionStore pss = new PotionStore(hero, hero_number);
         }
     }
-
     int hero_attack(){
         Scanner scanner = new Scanner(System.in);
         System.out.println(hero[hero_number].hero_name+ "의 공격입니다.");
@@ -207,7 +203,7 @@ public class Rpg_Game1 {
     }
 
     void checkLevelUp() {
-        if (hero[hero_number].hero_experience >= hero[hero_number].hero_level * 80) {
+        if(hero[hero_number].hero_experience >= hero[hero_number].hero_level * 80) {
             hero[hero_number].hero_level++;
             System.out.println(heroNameSetting+ "의 레벨이 "+hero[hero_number].hero_level+"이 되었습니다.");
             hero[hero_number].hero_money += 100;
@@ -215,7 +211,6 @@ public class Rpg_Game1 {
         }
     }
 }
-
 class Hero {
     int hero_level, hero_power, hero_hp, hero_defense, hero_mp, hero_experience, hero_money;
     String hero_name;
@@ -231,7 +226,6 @@ class Hero {
         this.hero_money = hero_money;
     }
 }
-
 class Monster {
     int monster_hp, monster_mp, monster_level, monster_power, monster_defense, monster_money, monster_experience;
     String monster_name;
@@ -247,7 +241,6 @@ class Monster {
         this.monster_experience = monster_experience;
     }
 }
-
 class PotionStore {
     PotionStore(Hero[] hero, int hero_number) {
         int pscs = 0;
@@ -262,32 +255,32 @@ class PotionStore {
         System.out.println("6. 상점에서 나가기");
         System.out.print("원하시는 물건을 입력하세요. : ");
         pscs = in.nextInt();
-        if (pscs == 1 && hero[hero_number].hero_money >= 30) {
+        if(pscs == 1 && hero[hero_number].hero_money >= 30) {
             hero[hero_number].hero_power += 100;
             hero[hero_number].hero_money -= 30;
             System.out.println("포션 상점에서 물건을 구매 시도하는 중입니다.");
             System.out.println(("힘 증간 포션 구입이 완료되었습니다.(힘+100)"));
         }
-        else if (pscs == 2 && hero[hero_number].hero_money >= 30) {
+        else if(pscs == 2 && hero[hero_number].hero_money >= 30) {
             hero[hero_number].hero_defense += 100;
             hero[hero_number].hero_money -= 30;
             System.out.println("포션 상점에서 물건을 구매 시도하는 중입니다.");
             System.out.println(("방어력 증강 포션 구입이 완료되었습니다.(방어력+100)"));
         }
-        else if (pscs == 3 && hero[hero_number].hero_money >= 100) {
+        else if(pscs == 3 && hero[hero_number].hero_money >= 100) {
             hero[hero_number].hero_experience += 50;
             hero[hero_number].hero_money -= 100;
             System.out.println("포션 상점에서 물건을 구매 시도하는 중입니다.");
             System.out.println(("경험치 증강 포션 구입이 완료되었습니다.(경험치+50)"));
         }
-        else if (pscs == 4 && hero[hero_number].hero_money >= 10) {
+        else if(pscs == 4 && hero[hero_number].hero_money >= 10) {
             hero[hero_number].hero_hp += 100;
             hero[hero_number].hero_money -= 10;
             System.out.println("포션 상점에서 물건을 구매 시도하는 중입니다.");
             System.out.println(("HP 증강 포션 구입이 완료되었습니다.(HP+50)"));
         }
 
-        else if (pscs == 5 && hero[hero_number].hero_money >= 10) {
+        else if(pscs == 5 && hero[hero_number].hero_money >= 10) {
             hero[hero_number].hero_mp += 50;
             hero[hero_number].hero_money -= 10;
             System.out.println("포션 상점에서 물건을 구매 시도하는 중입니다.");
@@ -296,7 +289,7 @@ class PotionStore {
         else if(pscs == 6){
             pscs = 0;
         }
-        else {
+        else{
             System.out.println("돈이 부족합니다.");
         }
         System.out.println(hero[hero_number].hero_money+"원 남았습니다.");
