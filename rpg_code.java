@@ -219,7 +219,6 @@ public class Rpg_Game1 {
 class Hero {
     int hero_level, hero_power, hero_hp, hero_defense, hero_mp, hero_experience, hero_money;
     String hero_name;
-
     Hero(String hero_name, int hero_level, int hero_power, int hero_defense, int hero_hp, int hero_mp,
          int hero_experience, int hero_money) {
         this.hero_name = hero_name;
@@ -236,7 +235,6 @@ class Hero {
 class Monster {
     int monster_hp, monster_mp, monster_level, monster_power, monster_defense, monster_money, monster_experience;
     String monster_name;
-
     Monster(String monster_name, int monster_hp, int monster_mp, int monster_level, int monster_power, int monster_defense,
             int monster_money, int monster_experience) {
         this.monster_name = monster_name;
